@@ -1,0 +1,19 @@
+# Lista de permissão: tudo é ignorado, exceto o que pertence ao trabalho final.
+/*
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/src/
+!/docs/
+!/dados/
+
+# Em dados/, só a população de estudo e a amostra (os microdados brutos do IBGE ficam fora).
+/dados/*
+!/dados/populacao.parquet
+!/dados/amostra.parquet
+
+__pycache__/
+*.pyc
+
+# Added by code-review-graph
+.code-review-graph/
