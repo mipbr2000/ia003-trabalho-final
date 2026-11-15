@@ -1,4 +1,4 @@
-# Trabalho final — Amostragem, intervalos de confiança e testes de hipóteses
+# Trabalho final de Probabilidade e Estatística para IA — amostragem, intervalos de confiança e testes de hipóteses
 
 Análise das pessoas ocupadas nos microdados da PNAD Contínua (IBGE), 2º trimestre de 2026:
 população de estudo, amostra aleatória simples e inferência, apresentadas em três painéis interativos.
