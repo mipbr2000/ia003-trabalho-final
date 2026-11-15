@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel 1 — Análise descritiva da população</title>
+<link rel="stylesheet" href="estilo.css">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+<header>
+<h1>Painel 1 — Análise descritiva da população</h1>
+<p>Trabalho final de Estatística — PNAD Contínua, 2º trimestre de 2026 (IBGE) — pessoas ocupadas</p>
+<nav></nav>
+</header>
+<main>
+<section>
+<h2>Base de dados</h2>
+<ul>
+<li><strong>Fonte:</strong> IBGE — Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua), microdados trimestrais do 2º trimestre de 2026. <a href="https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/2026/PNADC_022026.zip">Link de acesso aos microdados</a> · <a href="https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Trimestral/Microdados/Documentacao/">documentação e dicionário de variáveis</a>.</li>
+<li><strong>Contexto:</strong> pesquisa domiciliar do IBGE que acompanha o mercado de trabalho brasileiro (ocupação, rendimento, jornada) e características das pessoas (sexo, idade, cor, instrução).</li>
+<li><strong>Tamanho do arquivo original:</strong> 521.730 pessoas (linhas) e 420 variáveis.</li>
+<li><strong>População de interesse:</strong> as <span id="N"></span> pessoas ocupadas registradas no arquivo, com renda habitual, horas de trabalho e nível de instrução informados. <strong>Unidade amostral:</strong> a pessoa ocupada.</li>
+<li><strong>Variáveis quantitativas:</strong> renda mensal habitual de todos os trabalhos (VD4019), idade (V2009) e horas habituais semanais no trabalho principal (V4039).</li>
+<li><strong>Variáveis qualitativas:</strong> sexo (V2007), situação urbana/rural (V1022), cor ou raça (V2010), nível de instrução (VD3004), ensino superior completo (derivada de VD3004) e grande região (derivada da UF).</li>
+</ul>
+<p class="nota">Observação: a PNAD Contínua é, ela própria, uma amostra complexa com pesos. Neste trabalho os registros do arquivo são tratados como a população finita de estudo, sem pesos; os resultados descrevem esse conjunto de registros, não o Brasil.</p>
+</section>
+<section><h2>Filtros</h2><div id="filtros" class="filtros"></div>
+<p class="nota">Os filtros recalculam todos os indicadores, tabelas e gráficos para o grupo escolhido.</p></section>
+<section><h2>Indicadores</h2><div id="indicadores" class="cartoes"></div></section>
+<section><h2>Medidas descritivas das variáveis quantitativas</h2><div id="tabela" class="rolagem"></div></section>
+<section><h2>Distribuições e proporções</h2>
+<p class="nota">No histograma da renda, a última classe reúne R$ 19.500 ou mais. Os boxplots omitem valores atípicos; a linha tracejada é a média. Passe o cursor sobre os gráficos para ver os valores.</p><div id="graficos" class="grade"></div></section>
+<section><h2>Frequências e proporções das variáveis qualitativas</h2><div id="frequencias" class="rolagem"></div></section>
+</main>
+<script src="dados.js"></script><script src="comum.js"></script><script src="descritivo.js"></script>
+<script>montarNavegacao("index.html"); montarPainelDescritivo("populacao");
+document.querySelectorAll("#N").forEach((e) => (e.textContent = fmtInt(DADOS.meta.N)));
+document.querySelectorAll("#n").forEach((e) => (e.textContent = fmtInt(DADOS.meta.n)));</script>
+</body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel 2 — Análise descritiva da amostra</title>
+<link rel="stylesheet" href="estilo.css">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+<header>
+<h1>Painel 2 — Análise descritiva da amostra</h1>
+<p>Trabalho final de Estatística — PNAD Contínua, 2º trimestre de 2026 (IBGE) — pessoas ocupadas</p>
+<nav></nav>
+</header>
+<main>
+<section>
+<h2>Dimensionamento e seleção da amostra</h2>
+<ul>
+<li><strong>Parâmetros:</strong> nível de confiança de 95% (z = 1,96), margem de erro de 2 pontos percentuais e proporção planejada p = 0,50, que é o cenário de maior variância e dá o maior tamanho necessário (escolha conservadora, já que serão estimadas várias proporções).</li>
+<li><strong>Cálculo:</strong> n₀ = z²·p·(1−p)/e² = 1,96²·0,25/0,02² ≈ 2.401; com correção para população finita, n = n₀ / (1 + (n₀−1)/N) = <strong><span id="n"></span></strong> para N = <span id="N"></span>.</li>
+<li><strong>Seleção:</strong> amostra aleatória simples sem reposição. Cada pessoa da população recebeu um identificador de 1 a N e o sorteio foi feito por gerador pseudoaleatório com semente fixa (2026), de modo que todas têm a mesma probabilidade n/N de seleção e o sorteio é reproduzível.</li>
+</ul>
+<p class="nota">Em azul, os valores da população para o mesmo filtro, para comparação com a amostra (laranja).</p>
+</section>
+<section><h2>Filtros</h2><div id="filtros" class="filtros"></div>
+<p class="nota">Os filtros recalculam todos os indicadores, tabelas e gráficos para o grupo escolhido.</p></section>
+<section><h2>Indicadores</h2><div id="indicadores" class="cartoes"></div></section>
+<section><h2>Medidas descritivas das variáveis quantitativas</h2><div id="tabela" class="rolagem"></div></section>
+<section><h2>Distribuições e proporções</h2>
+<p class="nota">No histograma da renda, a última classe reúne R$ 19.500 ou mais. Os boxplots omitem valores atípicos; a linha tracejada é a média. Passe o cursor sobre os gráficos para ver os valores.</p><div id="graficos" class="grade"></div></section>
+<section><h2>Frequências e proporções das variáveis qualitativas</h2><div id="frequencias" class="rolagem"></div></section>
+</main>
+<script src="dados.js"></script><script src="comum.js"></script><script src="descritivo.js"></script>
+<script>montarNavegacao("amostra.html"); montarPainelDescritivo("amostra");
+document.querySelectorAll("#N").forEach((e) => (e.textContent = fmtInt(DADOS.meta.N)));
+document.querySelectorAll("#n").forEach((e) => (e.textContent = fmtInt(DADOS.meta.n)));</script>
+</body></html>

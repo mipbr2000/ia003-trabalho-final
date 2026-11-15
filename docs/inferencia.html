@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel 3 — Inferência estatística e comparação</title>
+<link rel="stylesheet" href="estilo.css">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+<header>
+<h1>Painel 3 — Inferência estatística e comparação</h1>
+<p>Trabalho final de Estatística — PNAD Contínua, 2º trimestre de 2026 (IBGE) — pessoas ocupadas</p>
+<nav></nav>
+</header>
+<main>
+<section>
+<h2>Como ler este painel</h2>
+<p>Os intervalos de confiança e os testes de hipóteses usam <strong>somente a amostra</strong> (n = <span id="n"></span>). Os parâmetros da população (N = <span id="N"></span>) foram calculados diretamente e servem para conferir se a inferência acertou.</p>
+<div class="filtros"><label>Nível de confiança<select id="confianca"><option value="0.90">90% (α = 0,10)</option><option value="0.95" selected>95% (α = 0,05)</option><option value="0.99">99% (α = 0,01)</option></select></label></div>
+<p class="nota">Mudar o nível de confiança recalcula os intervalos e o nível de significância usado na decisão dos testes.</p>
+</section>
+<section><h2>Estimativas, intervalos de confiança e parâmetros populacionais</h2>
+<div id="ic" class="grade"></div><div id="comparacao" class="rolagem"></div></section>
+<section><h2>Testes de hipóteses para proporções</h2><div id="testes-proporcao" class="grade"></div></section>
+<section><h2>Testes de hipóteses para médias</h2><div id="testes-media" class="grade"></div></section>
+<section><h2>Variabilidade amostral: e se a amostra fosse outra?</h2>
+<p id="texto-simulacao"></p><div id="simulacao" class="grafico" style="min-height:420px"></div></section>
+<section><h2>Interpretação e limitações</h2><ul id="interpretacao"></ul></section>
+</main>
+<script src="dados.js"></script><script src="comum.js"></script><script src="inferencia.js"></script>
+</body></html>
