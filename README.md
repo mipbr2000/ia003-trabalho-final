@@ -9,6 +9,10 @@ população de estudo, amostra aleatória simples e inferência, apresentadas em
 - Painel 2 — amostra: https://mipbr2000.github.io/ia003-trabalho-final/amostra.html
 - Painel 3 — inferência e comparação: https://mipbr2000.github.io/ia003-trabalho-final/inferencia.html
 
+## Vídeo de apresentação
+
+https://youtu.be/lrGHd66OT9k
+
 ## Base de dados
 
 Fonte: IBGE, PNAD Contínua trimestral, microdados do 2º trimestre de 2026.
