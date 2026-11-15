@@ -37,6 +37,11 @@ MINIMO_SUCESSOS_FRACASSOS = 10
 SIMULACOES = 100
 SEMENTE_SIMULACAO = 7
 
+def milhar(valor):
+    """Formata inteiro com separador de milhar brasileiro."""
+    return f"{valor:,}".replace(",", ".")
+
+
 TESTES = [
     {"id": "mulheres", "tipo": "proporcao", "variavel": "sexo", "evento": "Mulher",
      "titulo": "Proporção de mulheres entre os ocupados", "curto": "Mulheres", "ref": 0.5, "h1": "menor",
@@ -52,8 +57,9 @@ TESTES = [
                       "os ocupados trabalham menos do que isso."},
     {"id": "renda", "tipo": "media", "variavel": "renda", "unidade": "R$/mês",
      "titulo": "Renda média mensal habitual do trabalho", "curto": "Renda média", "ref": 2 * SALARIO_MINIMO_2026, "h1": "maior",
-     "justificativa": f"R$ {2 * SALARIO_MINIMO_2026} equivale a dois salários mínimos de 2026 "
-                      f"(2 × R$ {SALARIO_MINIMO_2026}). A pergunta é se a renda média supera esse valor."},
+     "justificativa": f"R$ {milhar(2 * SALARIO_MINIMO_2026)} equivale a dois salários mínimos de 2026 "
+                      f"(2 × R$ {milhar(SALARIO_MINIMO_2026)}; salário mínimo fixado pelo Decreto nº 12.797/2025, "
+                      f"em vigor desde 1º de janeiro de 2026). A pergunta é se a renda média supera esse valor."},
 ]
 
 
